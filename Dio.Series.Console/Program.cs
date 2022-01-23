@@ -26,7 +26,7 @@ while (opcaoUsuario.ToUpper() != "X")
 			break;
 
 		default:
-            throw new ArgumentOutOfRangeException();
+			throw new ArgumentOutOfRangeException();
 	}
 
 	opcaoUsuario = ObterOpcaoUsuario();
@@ -140,17 +140,17 @@ void ExcluirSerie()
 		}
 	}
 	else
-    {
+	{
 		throw new ArgumentOutOfRangeException($"Id {indiceSerie} não encontrado");
-    }
-	
+	}
+
 }
 
 void VisualizarSerie()
 {
 	Console.Write("Digite o id da série: ");
 	int indiceSerie = int.Parse(Console.ReadLine());
-	
+
 	var serie = repositorio.RetornaPorId(indiceSerie);
 	if (serie != null)
 		Console.WriteLine(serie);
